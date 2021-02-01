@@ -23,12 +23,9 @@ def f(n, k):
                 print("Leave")
                 break
 
-            counter += k
-            if counter > n:
-                rats = np.delete(rats, counter)
-            else:
-                rats = np.delete(rats, counter % number_of_rats)
-
+            counter += k-1
+            rats = np.delete(rats, counter % number_of_rats)
+            counter = counter % number_of_rats
             number_of_rats -= 1
             print(rats)
 
